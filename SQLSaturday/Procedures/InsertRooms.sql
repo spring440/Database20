@@ -1,0 +1,17 @@
+CREATE PROCEDURE insertRooms
+  AS 
+  BEGIN 
+    BEGIN TRY 
+      INSERT INTO Room VALUES (50,1);
+      INSERT INTO Room VALUES (45,2);
+      INSERT INTO Room VALUES (70,3);
+      INSERT INTO Room VALUES (50,4);
+      INSERT INTO Room VALUES (20,5);
+      INSERT INTO Room VALUES (100,6);
+      INSERT INTO Room VALUES (55,7);
+      INSERT INTO Room VALUES (80,8);
+    END TRY
+    BEGIN CATCH
+      SELECT ERROR_MESSAGE() AS ErrorMessage;
+    END CATCH
+  END
